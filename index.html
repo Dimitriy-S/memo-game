@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гра пам'яті "Мемо"</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>Гра пам'яті "Мемо"</header>
+
+  <div class="settings">
+    <div class="difficulty-settings">
+      <label><input type="radio" name="difficulty" value="easy" checked> Легкий (4×4)</label>
+      <label><input type="radio" name="difficulty" value="medium"> Середній (6×6)</label>
+      <label><input type="radio" name="difficulty" value="hard"> Складний (8×8)</label>
+    </div>
+
+    <div>
+      <label>Кількість дублікатів:
+        <input type="number" id="duplicatesInput" value="2" min="2" max="10" />
+      </label>
+    </div>  
+
+    <div>
+      <label>Максимум ходів:
+        <input type="number" id="maxMovesInput" value="999" min="1" />
+      </label>
+    </div>
+
+    <button id="restart">Перезапустити</button>
+    <button id="toggleTheme" aria-label="Переключити тему">🌙 Тёмний режим</button>
+
+    <div id="moves">Ходи: 0</div>
+    <div id="best">Рекорд: —</div>
+  </div>
+
+  <div id="board"></div>
+
+  <!-- Модальне вікно -->
+  <div id="gameOverModal" class="hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalMessage"></p>
+      <button id="modalRetry">Спробувати ще раз</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
